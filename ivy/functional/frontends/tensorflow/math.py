@@ -157,6 +157,11 @@ def erfcinv(x, name="erfcinv"):
 
 
 @to_ivy_arrays_and_back
+def is_inf(x, name=None):
+    return ivy.isinf(x)
+
+
+@to_ivy_arrays_and_back
 def is_non_decreasing(x, name="is_non_decreasing"):
     if ivy.array(x).size < 2:
         return ivy.array(True)
@@ -441,6 +446,11 @@ def floor(x, name=None):
 @to_ivy_arrays_and_back
 def ceil(x, name=None):
     return ivy.ceil(x)
+
+
+@to_ivy_arrays_and_back
+def round(x, name=None):
+    return ivy.round(x)
 
 
 @to_ivy_arrays_and_back
